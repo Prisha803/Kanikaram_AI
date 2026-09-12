@@ -59,10 +59,11 @@ Sales teams
 Finance department
 Marketing department
 
-  Patients and their families,
-  Surgical teams and oncologists
-  Hospital administrators (resource management)
-  Finance department (charged operations vs. budgeting donation)
+  The ones affected by the problem is:
+    Patients and their families,
+    Surgical teams and oncologists
+    Hospital administrators (resource management)
+    Finance department (charged operations vs. budgeting donation)
 
 
 
@@ -195,6 +196,20 @@ Biased data
 What could happen if the data is poor?
 Write 4-6 sentences.
 
+Three possible data-quality problems:
+  - Missing or incomplete staging information for patients referred 
+  late from tribal districts or former FATA areas
+  - Inconsistent formats between the registry data and operations data
+  - Small sample sizes for rarer cancer types
+
+If details about patients' circumstances are missing, the model may underestimate risk for
+people in underserved areas, since these patients often present later and have limited outcome
+data or data recorded inconsistently. Consequently, the model might miss patients who most need
+early intervention. Moreover, the small number of cases linked to rare cancers could cause the
+model to make overconfident predictions that do not generalize well. It is a straightforward example
+of poor data leading to a flawed model, which in turn results in bad business decisions, since an
+incorrect risk score could cause chemotherapy and radiation resources, which are limited, to be 
+allocated improperly or might give patients false expectations regarding their prognosis.
   
 
 Consider:
@@ -205,27 +220,35 @@ Part 6 — Complete AI Solution Summary
 
 Complete this final section:
 
-Business Problem
+1. Business Problem
+    Predicting cancer treatment success/failure per patient at SKMCH&RC
 
-Data Needed
+2. Data Needed
+  The type of cancer, the stage, the age, the gender, whether or not chemotherapy and
+  radiation therapy sessions were donated or charged
 
-AI/ML Approach
+3. AI/ML Approach
+  Classification model trained on historical case outcomes
 
-Type of Learning
+4. Type of Learning
+    Supervised learning
 
-Model Output
+5. Model Output
+    Success / Failure prediction per patient
 
-Business Benefit
+6. Business Benefit
+    Better prioritization of limited chemo/radiation/surgical resources toward higher-risk patients,
+    more informed patient counseling
 
-Potential Risk
+7. Potential Risk
+    Model could underperform for underserved/late-presenting patient
+    groups due to sparse data, worsening existing care gaps
 
-Assignment Example
+8. Assignment Example
 
 Here is an example
-
-Business Problem
-
-A telecommunications company wants to identify customers who are likely to cancel their subscriptions.
+  Business Problem
+    A telecommunications company wants to identify customers who are likely to cancel their subscriptions.
 
 Data Needed
 
