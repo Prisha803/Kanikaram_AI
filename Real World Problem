@@ -1,3 +1,5 @@
+Problem → AI Solution Worksheet
+
 Purpose
 
 The purpose of this assignment is to help you connect a real-world business problem with an appropriate AI or machine learning solution.
@@ -26,13 +28,28 @@ Inventory management
 Marketing campaign targeting
 Answer:
 
-What is the business problem?
+1. What is the business problem?
 Write 4-6 sentences.
+  SKMCH&RC treats thousands of cancer patients across many cancer types, but treatment success
+  ranges from 85% in breast cancer down to 52% in liver cancer (HCC). The hospital needs a way to identify,
+  at diagnosis, which patients are at greater risk of poor treatment outcomes so the care teams can intervene
+  earlier or allocate more intensive resources. Currently, the risk of poor outcomes is likely estimated mainly
+  through clinical judgment and general statistics by cancer type, rather than a personalized, data-driven risk score
+  for each patient. An AI model could consider factors like cancer type, stage at diagnosis, and patient age to predict
+  the likelihood that treatment will work or fail in each case.
 
-Why is this problem important to the organization?
+
+2. Why is this problem important to the organization?
 Write 4-6 sentences.
+The hospital has a mix of donated and paid procedures, so resources are limited and need to be used where they will
+do the most good. This way, the hospital can more accurately predict which patients are at higher risk and prioritize
+scarce chemo/radiation sessions and surgical planning for those who need more monitoring. It also helps counsel patients
+and families more accurately about expected outcomes. For example, patients with oral cavity cancers usually present at
+Stage II-III due to limited access to screening in KPK. Early risk flagging can significantly improve survival rates.
+This directly supports the hospital’s mission to maximize patient outcomes within resource constraints.
 
-Who is affected by this problem?
+
+3. Who is affected by this problem?
 Examples:
 
 Customers
@@ -41,6 +58,15 @@ Managers
 Sales teams
 Finance department
 Marketing department
+
+  Patients and their families,
+  Surgical teams and oncologists
+  Hospital administrators (resource management)
+  Finance department (charged operations vs. budgeting donation)
+
+
+
+
 Part 2 — Identify the Data — 10 Points
 
 Think about what information an AI system would need.
@@ -52,14 +78,23 @@ Question
 Your Answer
 
 What data would you need?
+    Cancer type, stage at diagnosis, patient age at onset, gender, 
+    number of chemo/radiation sessions received, whether surgery
+    was donated or charged.
 
 Where could the data come from?
+    The hospital’s own cancer registry and operations records
 
 How much historical data might be useful?
+    Multiple years of cancer type case records
 
 What would be the most important variables?
+    Type of cancer, stage, age at diagnosis, Number of chemo/radiation sessions
 
 What could be missing or inaccurate?
+    Incomplete staging info for patients referred late from tribal districts, inconsistent
+    recording of comorbidities, "success rate" only tracked in aggregate rather than per patient
+
 
 Example
 
@@ -74,6 +109,9 @@ Number of complaints
 Product usage
 Contract type
 Previous cancellations
+
+
+
 Part 3 — Identify Features and Target — 10 Points
 
 Suppose you are building a machine learning system.
@@ -81,10 +119,19 @@ Suppose you are building a machine learning system.
 What information would you give the model?
 These are your features.
 
-List at least 5 features.
+1. List at least 5 features.
+  - Cancer type
+  - Stage at diagnosis
+  - Age at onset
+  - Gender
+  - Number of chemo sessions
+  - Number of radiation sessions
+  - Operation status: donated or charged
+
+Target/output: 
+  Treatment outcome --> Success / Failure (or continuous 5-year survival probability)
 
 Example:
-
 Customer age
 Monthly spending
 Number of complaints
@@ -97,21 +144,28 @@ Example:
 
 Customer will churn: Yes/No
 
+
+
 Part 4 — Select the AI/ML Approach — 10 Points
 
 Answer the following.
 
-Would you use supervised or unsupervised learning?
+1. Would you use supervised or unsupervised learning?
 Choose:
 
 ☐ Supervised Learning
 ☐ Unsupervised Learning
 ☐ Not sure
-
-Explain your choice.
+2. Explain your choice.
 Write 4-6 sentences.
+  Supervised learning, the hospital already has historical outcome data, with success and failure
+  rates recorded separately for each cancer type. This allows each previous case to be assigned its 
+  actual outcome, which is precisely what supervised learning requires to learn the relationship between
+  the features and the outcome. Unsupervised learning would be appropriate only if the aim were to identify
+  unlabelled groups of patients. Because the aim here is to predict whether the treatment will succeed for this
+  patient, supervised learning is the appropriate choice.
 
-Would the problem involve classification or prediction?
+3. Would the problem involve classification or prediction?
 Choose:
 
 ☐ Classification
@@ -119,8 +173,13 @@ Choose:
 ☐ Both
 ☐ Neither
 
-Explain your choice.
+4. Explain your choice.
 Write 4-6 sentences.
+  Classification: The task is to assign one of two possible labels, namely Success or Failure, and this is a typical
+  instance of a classification problem, just as in the case of classifying a loan applicant as high-risk or low-risk.
+  Although it might be presented as a prediction should the hospital want a continuous estimate of five-year survival,
+  the decision that the hospital actually needs whether or not to flag this patient for closer monitoring is best met by
+  using classification.
 
 Part 5 — Data Quality and Business Impact — 10 Points
 
@@ -135,6 +194,8 @@ Inconsistent formats
 Biased data
 What could happen if the data is poor?
 Write 4-6 sentences.
+
+  
 
 Consider:
 
