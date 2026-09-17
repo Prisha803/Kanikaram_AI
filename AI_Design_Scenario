@@ -1,19 +1,21 @@
 In class activity - Think Like an AI Designer
 
-For the problem identified in previous assignment , Please complete the following
+1. For the problem identified in previous assignment , Please complete the following
 What are the features?
 Identify the information that the model could use as inputs.
 
-What is the label?
-What outcome should the model learn to predict?
+2. What is the label?
+   What outcome should the model learn to predict?
 
-What would training data contain?
-Why should testing data be kept separate?
-What could be a false positive?
-What could be a false negative?
-Would precision or recall be more important?
+3. What would training data contain?
+
+4. Why should testing data be kept separate?
+5. What could be a false positive?
+6. What could be a false negative?
+7. Would precision or recall be more important?
+
 Explain your reasoning.
 
-What types of poor-quality data could affect this model?
-What could cause this model to overfit?
-What would make you trust—or not trust—the model's predictions?
+8. What types of poor-quality data could affect this model?
+9. What could cause this model to overfit?
+10. What would make you trust—or not trust—the model's predictions?
