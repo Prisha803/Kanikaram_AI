@@ -2,20 +2,69 @@ In class activity - Think Like an AI Designer
 
 1. For the problem identified in previous assignment , Please complete the following
 What are the features?
-Identify the information that the model could use as inputs.
+   Cancer type
+   Stage at diagnosis
+   Age at onset
+   Gender
+   Number of chemo sessions
+   Number of radiation sessions
+   Whether the operation was donated or charged
 
 2. What is the label?
    What outcome should the model learn to predict?
+      Treatment outcome — Success or Failure
 
 3. What would training data contain?
+   It would be past patient records that have all the features above AND the actual outcome
+   already known, so like real cases where we already know if the treatment worked or not.
 
 4. Why should testing data be kept separate?
+   Because if you test the model on the same data it trained on, it can just kind of "memorize" the answers
+   and look way better than it actually is. Keeping test data separate is the only way to actually see if the model can
+   handle patients it's never seen before.
+
 5. What could be a false positive?
+   Model says a patient is high-risk (predicts Failure) but they actually end up doing fine.
+   This wastes resources on extra monitoring/sessions they didn't really need and might scare the
+   patient/family for no reason.
+
 6. What could be a false negative?
+   Model says a patient will be fine (predicts Success) but their treatment actually fails.
+   This is worse because that patient doesn't get flagged for early intervention, which is literally
+   the whole point of building this model.
+
 7. Would precision or recall be more important?
+   Recall. Missing a patient who's actually high-risk is way worse than flagging someone who turns out okay.
+   A false positive just costs some extra resources, but a false negative means someone who needed help didn't get
+   flagged in time. So I'd rather the model over-flag a bit than miss people — that's what recall is about.
 
 Explain your reasoning.
 
 8. What types of poor-quality data could affect this model?
+   Missing/incomplete staging info for patients referred late from tribal districts or former FATA areas
+   Registry data and operations data not matching up/formatted differently
+   Not enough cases for rarer cancer types
+   Outcomes only tracked in aggregate instead of per patient
+   Data being biased toward patients who show up earlier and have cleaner records
+
 9. What could cause this model to overfit?
+   Too few cases for rare cancer types compared to how many features I'm using
+   Making the model too complicated for how much data there actually is
+   Not using a proper test set or cross-validation
+   Model latching onto random patterns specific to this hospital/time
+   period that wouldn't hold up on new patients
+
+
 10. What would make you trust—or not trust—the model's predictions?
+   I'd trust it more if it performed consistently across different patient groups, not just the ones with cleaner
+   data, and if it was tested on data it never saw before. I'd also want the predicted probabilities to actually line
+   up with real outcomes, and for a doctor to be able to confirm the flagged risk factors make medical sense. I'd trust it
+   less if it did noticeably worse for underserved/late-referred patients (since that's exactly the group with the messiest data),
+   if I couldn't tell why it flagged someone, or if it was never tested outside the original data it trained on.
+
+
+
+
+
+
+
