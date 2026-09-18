@@ -2,6 +2,7 @@ In class activity - Think Like an AI Designer
 
 1. For the problem identified in previous assignment , Please complete the following
 What are the features?
+   ANSWER: 
    Cancer type
    Stage at diagnosis
    Age at onset
@@ -11,59 +12,54 @@ What are the features?
    Whether the operation was donated or charged
 
 2. What is the label?
-   What outcome should the model learn to predict?
-      Treatment outcome — Success or Failure
+   ANSWER: What outcome should the model learn to predict?
+   Treatment outcome — Success or Failure
 
 3. What would training data contain?
-   It would be past patient records that have all the features above AND the actual outcome
-   already known, so like real cases where we already know if the treatment worked or not.
+   ANSWER: The only way to have cases with all the features mentioned above is to use past patient records
+   together with the actual outcome already being known, just as in real cases where it is already known
+   whether or not the treatment worked.
 
 4. Why should testing data be kept separate?
-   Because if you test the model on the same data it trained on, it can just kind of "memorize" the answers
-   and look way better than it actually is. Keeping test data separate is the only way to actually see if the model can
-   handle patients it's never seen before.
+   ANSWER: Because if you try the model on the same data that it was trained on, it will simply be able to
+   'memorize' the answers and appear a lot better than it really is. The only way to actually find out whether
+   the model can deal with patients it has never seen before is to keep the test data separate.
 
 5. What could be a false positive?
-   Model says a patient is high-risk (predicts Failure) but they actually end up doing fine.
-   This wastes resources on extra monitoring/sessions they didn't really need and might scare the
-   patient/family for no reason.
+   ANSWER: The model concludes that a patient is high-risk (it predicts failure) when in fact the patient turns out all right.
+   This means that unnecessary extra monitoring or sessions is carried out that was not really needed and may unreasonably scare
+   the patient and their family.
 
 6. What could be a false negative?
-   Model says a patient will be fine (predicts Success) but their treatment actually fails.
-   This is worse because that patient doesn't get flagged for early intervention, which is literally
-   the whole point of building this model.
+   ANSWER: When the model predicts that a patient will make a full recovery an outcome it labels as a success the treatment
+   still ends in failure. This is more problematic since the patient is not identified in time for early intervention,
+   which is, in fact, the entire purpose of developing the model.
 
 7. Would precision or recall be more important?
-   Recall. Missing a patient who's actually high-risk is way worse than flagging someone who turns out okay.
-   A false positive just costs some extra resources, but a false negative means someone who needed help didn't get
-   flagged in time. So I'd rather the model over-flag a bit than miss people — that's what recall is about.
+   ANSWER: Memories. It is far worse to fail to identify a high-risk patient than to identify a patient who is okay.
+   A false positive is just a waste of some resources, but a false negative is someone who needed help not being
+   flagged in time. So I'd rather over-flag a little with the model, than miss people, that's what recall is for.
 
 Explain your reasoning.
 
 8. What types of poor-quality data could affect this model?
-   Missing/incomplete staging info for patients referred late from tribal districts or former FATA areas
-   Registry data and operations data not matching up/formatted differently
-   Not enough cases for rarer cancer types
-   Outcomes only tracked in aggregate instead of per patient
-   Data being biased toward patients who show up earlier and have cleaner records
+   ANSWER: Patients referred late from tribal districts or former FATA areas have missing/incomplete staging information. 
+   Registry data and operations data do not match/are formatted differently. Not enough cases of rarer cancer types.
+   Results only tracked in aggregate, not by patient.
+   Data is skewed toward patients who come in earlier and have cleaner records
 
 9. What could cause this model to overfit?
-   Too few cases for rare cancer types compared to how many features I'm using
-   Making the model too complicated for how much data there actually is
-   Not using a proper test set or cross-validation
-   Model latching onto random patterns specific to this hospital/time
-   period that wouldn't hold up on new patients
+   ANSWER: Too few cases for rare cancer types versus the number of features I am using. The model is too complex
+   for the amount of data I have. The model is not using a proper test set or cross validation, it is overfitting
+   to random patterns specific to this hospital/time period that would not generalize to new patients.
 
 
 10. What would make you trust—or not trust—the model's predictions?
-   I'd trust it more if it performed consistently across different patient groups, not just the ones with cleaner
-   data, and if it was tested on data it never saw before. I'd also want the predicted probabilities to actually line
-   up with real outcomes, and for a doctor to be able to confirm the flagged risk factors make medical sense. I'd trust it
-   less if it did noticeably worse for underserved/late-referred patients (since that's exactly the group with the messiest data),
-   if I couldn't tell why it flagged someone, or if it was never tested outside the original data it trained on.
-
-
-
+   ANSWER: I'd have more confidence in it if it were consistent across different patient groups, not just those with cleaner
+   data, and if it had been tested on data it hadn't seen before. I’d also like the predicted probabilities to actually map
+   to real outcomes, and a doctor to be able to confirm that the risk factors flagged make medical sense. I would be less
+   trusting if it did significantly worse for underserved/late-referred patients (since that’s the group with the messiest data),
+   if I couldn’t understand why it flagged someone, or if it was never tested outside the data it was trained on.
 
 
 
